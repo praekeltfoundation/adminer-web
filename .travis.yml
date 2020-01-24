@@ -17,7 +17,7 @@ jobs:
       env:
         - IMAGE_NAME=praekeltfoundation/adminer-web
         - REGISTRY_USER=praekeltorgdeploy
-        - secure: ""
+        - secure: "aVSK2mR/LHlyEFOhJZAtlwe615HnjPKwcZxBJLl9Y32BjBwIPVFmvtOGKORCpaRZCcQPh3vh6Q4w6RiiedXJv4n74xcF4KLj6n8I3alVgUHnYyhMSekVaI//G10ms1Xs2rclFKnGE2gPbvDPflFEE/YdjSg1QiJOJeS5Epx1YCs0fPhQ3r/Jiz9TFto/fDNwhK+G3TPJApIJ+UXIXRFODLOxDUziCHfuycAhd/8D1QHmQxlK7P6xs/Z18D5qlm16MTqqRzy0S+i7ZRThMylFrsNVL1wgTA803N5aMqP4kAKt0Xc1l5mtUS1G2v8i4qsLZyjdLYF3VlvIxgAILDJv87tqjszBWkrKPQ8qCvCMIueqUMyHeks+MH+HGUiuLyfKfGndXoofRQBTqdmBX9q6hUaWrR51Ij8bDBvTVd7trZvu7vMtZ/PkXTRyu+PnEjN9whVwdBRxbQtDw9K4sepivmIKi9+w07Srr6zyMlpFh3DidpZOaPk0Z7E7J68jlDLJe65iN6rmC8T9k3jtLnnyhRqbVGyHQ3bN2R+dmiirJ5UaPBhiG1zDndWT2lcob/5FziQPvGsc1T+2C7nfK1vMCShxw2b+9RB91jMRh0LIAboRdOLHWlVco9ptFv0FFyyw3aVuhAkbamCsHF6pgvBPXwc53TRw7/HncJDnhAqi1nY="
 
       # Update Docker: we want some new docker build features
       install:
