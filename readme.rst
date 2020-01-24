@@ -1,0 +1,2 @@
+Adminer with .htaccess control
+==============================
