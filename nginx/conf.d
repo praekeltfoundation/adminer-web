@@ -5,9 +5,9 @@ server {
     listen         80;
     server_name	   adminer;
 
-    allow 192.168.1.1/24;
-    allow 127.0.0.1;
-    deny all;
+#    allow 192.168.1.1/24;
+#    allow 127.0.0.1;
+#    deny all;
 
     root           /var/www/;
     index          index.php;
@@ -35,6 +35,8 @@ server {
 
     location ~ \.php$ {
         limit_req zone=ddos_limit burst=12 nodelay=8;
+
+        fastcgi_pass unix:/run/php/php7.0-fpm.sock;
 
     	try_files $uri =404;
     	fastcgi_split_path_info ^(.+\.php)(/.+)$;
