@@ -15,3 +15,6 @@ RUN wget -x http://www.adminer.org/latest.php -O /etc/www/index.php
 COPY nginx/www.conf /etc/php/7.3/fpm/pool.d/www.conf
 
 EXPOSE 80
+
+# Let supervisord start nginx & php-fpm
+CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
