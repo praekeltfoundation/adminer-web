@@ -4,8 +4,8 @@ COPY nginx/adminer.conf /etc/nginx/conf.d/
 COPY nginx/htpasswd /etc/nginx/conf.d/.htpasswd
 COPY nginx/fastcgi_params /etc/nginx/fastcgi_params
 COPY nginx/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
-COPY nginx/createuser.sh /etc/nginx/createuser.sh
-RUN chmod +x /etc/nginx/createuser.sh
+COPY nginx/restrictaccess.sh /etc/nginx/restrictaccess.sh
+RUN chmod +x /etc/nginx/restrictaccess.sh
 
 RUN rm /etc/nginx/conf.d/default.conf
 
@@ -19,7 +19,4 @@ COPY nginx/www.conf /etc/php/7.3/fpm/pool.d/www.conf
 EXPOSE 80
 
 # Let supervisord start nginx & php-fpm
-CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
-
-# create an htpasswd user from env vars
-CMD ["/etc/nginx/createuser.sh"]
+CMD /etc/nginx/restrictaccess.sh ; /usr/bin/supervisord -c /etc/supervisor/conf.d/supervisord.conf
