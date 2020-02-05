@@ -21,6 +21,6 @@ fi
 
 # update server name
 if [ "${ALLOWED_HOST}" != "" ];then
-  sed -i "s/server_name adminer;/server_name ${ALLOWED_HOST}/g;" /etc/nginx/conf.d/adminer.conf
+  sed -i "s/server_name adminer;/server_name ${ALLOWED_HOST};/g;" /etc/nginx/conf.d/adminer.conf
   echo "set server_name  ${ALLOWED_HOST}"
 fi
